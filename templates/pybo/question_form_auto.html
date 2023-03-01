@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h5 class="my-3 border-bottom pb-2">질문등록</h5>
+<!-- action 속성을 지정하지 않았다. form 태그에 action 속성을 지정하지 않으면 현재 페이지의 URL 이 디폴드 action으로 설정된다. -->
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">저장하기</button>
+  </form>
+</div>
+{% endblock %}
