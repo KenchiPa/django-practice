@@ -1,9 +1,0 @@
-2023-03-03 13:43:30,179 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
-2023-03-03 13:43:33,140 [ERROR] django.security.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-2023-03-03 13:43:33,447 [WARNING] django.request: Bad Request: /
-2023-03-03 13:43:33,503 [ERROR] django.security.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-2023-03-03 13:43:33,511 [WARNING] django.request: Bad Request: /favicon.ico
-2023-03-03 13:43:39,861 [ERROR] django.security.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-2023-03-03 13:43:39,868 [WARNING] django.request: Bad Request: /
-2023-03-03 13:43:39,927 [ERROR] django.security.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
-2023-03-03 13:43:39,939 [WARNING] django.request: Bad Request: /favicon.ico
