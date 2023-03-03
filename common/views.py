@@ -22,3 +22,7 @@ def signup(request):
     else:  # GET 요청인 경우 회원가입 화면
             form = UserForm()
     return render(request, 'common/signup.html', {'form': form})
+
+
+def page_not_found(request, exception):
+    return render(request, 'common/404.html', {})
