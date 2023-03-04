@@ -1,0 +1,420 @@
+body {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+img {
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+
+/* INNER */
+.inner {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* BUTTON */
+.btn {
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #595959;
+    border-radius: 4px;
+    color: #595959;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: .4s;
+}
+.btn:hover {
+    background-color: #595959;
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    border-bottom: 1px solid #595959;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+}
+header > .inner {
+    height: 150px;
+}
+header .logo {
+    height: 80px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+header .sub-menu {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    display: flex;
+}
+header .sub-menu ul.menu {
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+header .sub-menu ul.menu li::before {
+    content: "";
+    display: block;  /* position: absolute; 있으면 블럭요소로 변환이 된다. display: block; 생략 가능하다. */
+    width: 1px;
+    height: 15px;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+header .sub-menu ul.menu li:first-child::before {
+    display: none;
+}
+header .sub-menu ul.menu li a {
+    font-size: 16px;
+    padding: 11px 16px;
+    display: block;
+    color: #595959
+}
+header .sub-menu ul.menu li a:hover {
+    color: #D58F3F
+}
+header .sub-menu .search {
+    height: 34px;
+    position: relative;
+}
+header .sub-menu .search input {
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #595959;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #D58F3F;
+    font-size: 12px;
+    transition: width .4s;
+}
+header .sub-menu .search input:focus {
+    width: 190px;
+    border-color: #000;
+}
+header .sub-menu .search .material-icons {
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+    transition: .4s;
+}
+header .sub-menu .search.focused .material-icons {
+    opacity: 0;
+}
+header .main-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+}
+header .main-menu .item{
+
+}
+header .main-menu .item .item__name {
+    padding: 10px 20px 34px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+header .main-menu .item:hover .item__name {
+    background-color: #2c2a29;
+    color: #D58F3F;
+    border-radius: 6px 6px 0 0;
+}
+header .main-menu .item .item__name__underline {
+    display: block;
+    padding: 10px 20px 34px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #2c2a29;
+}
+header .main-menu .item:hover .item__name__underline {
+    background-color: #2c2a29;
+    color: #D58F3F;
+    border-radius: 6px 6px 0 0;
+}
+header .main-menu .item .item__contents {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    display: none;
+}
+header .main-menu .item:hover .item__contents {
+    display: block;
+}
+header .main-menu .item .item__contents .contents__menu {
+    background-color: #2c2a29;
+}
+header .main-menu .item .item__contents .contents__menu > ul {
+    display: flex;
+    padding: 20px 0;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li {
+    width: 220px;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+    padding: 3px 0 12px 0;
+    font-size: 14px;
+    color: #fff;
+}
+/*
+header .main-menu .item .item__contents .contents__menu > ul > li ul {
+    사용 X
+}
+*/
+header .main-menu .item .item__contents .contents__menu > ul > li ul li {
+    padding: 5px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;  /* 화살표 --> 손가락 */
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+    color: #D58F3F;
+}
+header .main-menu .item .item__contents .contents__texture {
+    padding: 26px 0;
+    font-size: 12;  /* 상속된다. */
+    background-image: url("../images/main_menu_pattern.png");
+    border-bottom: 1px solid gray;
+}
+header .main-menu .item .item__contents .contents__texture h4{
+    color: #595959;
+    font-weight: 700;
+}
+header .main-menu .item .item__contents .contents__texture p{
+    color: #D58F3F;
+    margin: 4px 0 14px;
+}
+
+
+/* VISUAL */
+.visual {
+    margin-top: 150px;
+    background-image: url("../images/visual_bg.jpg");
+    background-position: center;
+}
+.visual .inner {
+    height: 646px;
+}
+.visual .k {
+    position: absolute;
+    bottom: 320px;
+    left: 0px;
+}
+.visual .e {
+    position: absolute;
+    bottom: 300px;
+    left: 80px;
+}
+.visual .n {
+    position: absolute;
+    bottom: 323px;
+    left: 160px;
+}
+.visual .c {
+    position: absolute;
+    bottom: 300px;
+    left: 240px;
+}
+.visual .h {
+    position: absolute;
+    bottom: 320px;
+    left: 320px;
+}
+.visual .i {
+    position: absolute;
+    bottom: 300px;
+    left: 400px;
+}
+.visual .cat-foot {
+    position: absolute;
+    bottom: 200px;
+    right: 0px;
+}
+.visual .cat-foot2 {
+    position: absolute;
+    bottom: 0;
+    right: 275px;
+}
+.visual .fade-in {
+    opacity: 0;
+}
+
+
+/* YOUTUBE VIDEO */
+.youtube {
+    position: relative;
+    height: 1000px;
+    background-color: #333;
+    overflow: hidden;
+}
+.youtube .youtube__area {
+    width: 1920px;
+    position: absolute;
+    left: 50%;
+    margin-left: calc(1920px / -2);
+    top: 50%;
+    margin-top: calc(1920px * 9 / 16 / -2);
+}
+.youtube .youtube__area::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+}
+.youtube .youtube__cover {
+    background-image: url("../images/video_cover_pattern.png");
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.youtube .inner {
+    height: 700px;
+}
+/* .youtube .floating1 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+.youtube .floating2 {
+    position: absolute;
+    top: 350px;
+    left: 150;
+} */
+
+
+
+
+
+/* FOOTER */
+footer {
+    background-color: #fff;
+    border-top:  1px solid #595959;
+}
+footer .inner {
+    padding: 40px 0 60px 0;
+}
+footer .menu {
+    display: flex;
+    justify-content: center;
+}
+footer .menu li {
+    position: relative;
+}
+footer .menu li::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    margin: auto;
+}
+footer .menu li:last-child::before {
+    display: none;
+}
+footer .menu li a {
+    color: #595959;
+    font-size:  12px;
+    font-weight: 700;
+    padding: 15px;
+    display: block;
+}
+footer .menu li a.green {
+    color: #D58F3F;
+}
+footer .btn-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+footer .btn-group .btn {
+    font-size:  12px;
+    margin-right:  10px;
+}
+footer .btn-group .btn:last-child {
+    margin-right: 0;
+}
+footer .info {
+    margin-top: 30px;
+    text-align: center;
+}
+footer .info span {
+    margin-right: 20px;
+    color: #595959;
+    font-size: 12px;
+}
+footer .info span:last-child {
+    margin-right: 0;
+}
+footer .copyright {
+    color: #595959;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+}
+footer .logo {
+    margin: 30px auto 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
