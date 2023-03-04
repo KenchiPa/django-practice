@@ -215,6 +215,7 @@ header .main-menu .item .item__contents .contents__texture p{
 .visual {
     margin-top: 150px;
     background-image: url("../images/visual_bg.jpg");
+    background-size: cover;
     background-position: center;
 }
 .visual .inner {
