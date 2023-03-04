@@ -8,6 +8,10 @@ logger = logging.getLogger('pybo')
 
 def index(request):
     logger.info("INFO 레벨로 출력")
+    return render(request, 'pybo/index.html', {})
+
+
+def base(request):
     page = request.GET.get('page', '1')  # 페이지  default
     kw = request.GET.get('kw', '')  # 검색어
     question_list = Question.objects.order_by('-create_date')
@@ -23,9 +27,9 @@ def index(request):
         ).distinct()
     paginator = Paginator(question_list, 10)  # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)  # 해당 페이지의 데이터만 조회하도록 쿼리가 변경된다.
-    context = {'question_list': page_obj, 'page': page, 'kw':kw}
-    return render(request, 'pybo/index.html', context)
+    context = {'question_list': page_obj, 'page': page, 'kw': kw}
     return render(request, 'pybo/question_list.html', context)
+
 
 def detail(request, question_id):
     # question = Question.objects.get(id=question_id)

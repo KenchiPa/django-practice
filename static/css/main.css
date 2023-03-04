@@ -269,7 +269,7 @@ header .main-menu .item .item__contents .contents__texture p{
 .youtube {
     position: relative;
     height: 1000px;
-    background-color: #333;
+    background-color: #fff;
     overflow: hidden;
 }
 .youtube .youtube__area {
