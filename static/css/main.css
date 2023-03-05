@@ -393,8 +393,6 @@ footer .copyright {
 footer .logo {
     margin: 30px auto 0;
 }
-
-
 .login {
     margin-top: 140px;
 }
@@ -413,6 +411,7 @@ footer .logo {
     position: absolute;
 }
 .login .inner .login-container .user-id {
+    padding: 4px 10px;
     position: absolute;
     left: 50px;
     margin-top: 20px;
@@ -432,6 +431,7 @@ footer .logo {
     font-size: 50px;
 }
 .login .inner .login-container .user-password {
+    padding: 4px 10px;
     position: absolute;
     left: 50px;
     margin-top: 100px;
