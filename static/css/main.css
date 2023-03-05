@@ -467,6 +467,105 @@ footer .logo {
     background-color: #595959;
 }
 
+.signup {
+    margin-top: 140px;
+ }
+ .signup .inner {
+    width: 1100px;
+    height: 900px;
+    position: relative;
+}
+ .signup .inner .signup-forms {
+    width: 900px;
+    height: 622px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+ }
+ .signup .inner .signup-forms .signup-userid {
+    padding: 4px 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 360px;
+    margin: auto;
+    width: 500px;
+    height: 60px;
+    border: 1px solid #595959;
+    border-radius: 6px;
+    outline: none;
+    font-size: 30px;
+    box-sizing: border-box;
+    color: #D58F3F;
+ }
+ .signup .inner .signup-forms .signup-password {
+    padding: 4px 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 280px;
+    margin: auto;
+    width: 500px;
+    height: 60px;
+    border: 1px solid #595959;
+    border-radius: 6px;
+    outline: none;
+    font-size: 30px;
+    box-sizing: border-box;
+    color: #D58F3F;
+ }
+ .signup .inner .signup-forms .signup-password2 {
+    padding: 4px 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+    margin: auto;
+    width: 500px;
+    height: 60px;
+    border: 1px solid #595959;
+    border-radius: 6px;
+    outline: none;
+    font-size: 30px;
+    box-sizing: border-box;
+    color: #D58F3F;
+ }
+ .signup .inner .signup-forms .signup-email {
+    padding: 4px 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:  120px;
+    margin: auto;
+    width: 500px;
+    height: 60px;
+    border: 1px solid #595959;
+    border-radius: 6px;
+    outline: none;
+    font-size: 30px;
+    box-sizing: border-box;
+    color: #D58F3F;
+ }
+ .signup .inner .signup-forms .signup-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 20px;
+    margin: auto;
+    width: 500px;
+    height: 60px;
+    border: 2px solid #595959;
+    border-radius: 6px;
+    font-size: 35px;
+    transition: .4s;
+    cursor: pointer;
+ }
+ .signup .inner .signup-forms .signup-btn:hover {
+    color: #fff;
+    background-color: #595959;
+ }
 
 
 
