@@ -8,7 +8,7 @@ logger = logging.getLogger('pybo')
 
 def index(request):
     logger.info("INFO 레벨로 출력")
-    return render(request, 'pybo/index.html', {})
+    return render(request, 'kenchi/index.html', {})
 
 
 def base(request):

@@ -1,0 +1,107 @@
+{% load static %}
+
+<header>
+        <div class="inner">
+
+            <a href="/" class="logo">
+                <img src="{% static 'images/kenchi_text_logo.png' %}" alt="kenchi_logo">
+            </a>
+
+            <!-- SUB-MENU -->
+            <div class="sub-menu">
+                <ul class="menu">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="javascript:void(0)">USER : {{ user.username }} </a>
+                    </li>
+                    <li>
+                        <a href="common/logout">LOG OUT</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="common/login">SIGN IN</a>
+                    </li>
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                    <li>
+                        <a href="common/signup">SIGN UP</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="javascript:void(0)">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">CONTACT</a>
+                    </li>
+                </ul>
+                <div class="search">
+                    <input type="text" />
+                    <div class="material-icons">search</div>
+                </div>
+            </div>
+
+            <!-- MAIN-MENU -->
+            <ul class="main-menu">
+                <li class="item">
+                    <div class="item__name">ETC</div>
+                    <div class="item__contents">
+                        <div class="contents__menu">
+                        <ul class="inner">
+                            <li>
+                            <h4>가나</h4>
+                            <ul>
+                                <li>다라마바 사아</li>
+                                <li>자차카타 파하</li>
+                                <li>가나다라 마바사아</li>
+                            </ul>
+                            </li>
+                            <li>
+                            <h4>자차카타 파하</h4>
+                            <ul>
+                                <li>도레미</li>
+                                <li>파솔라시도 레미파솔</li>
+                                <li>라시도레미</li>
+                                <li>파솔라시</li>
+                                <li>도레미파</li>
+                                <li>솔라</li>
+                                <li>시도</li>
+                                <li>도레미파솔 라시도</li>
+                            </ul>
+                            </li>
+                            <li>
+                            <h4>도레 미파솔</h4>
+                            <ul>
+                                <li>라시도레 미파솔 라시도레</li>
+                                <li>미파솔 라시도레 미파</li>
+                                <li>솔 라시 도레미 파솔라시도레</li>
+                                <li>미파솔® 라시 도레 미파솔</li>
+                            </ul>
+                            </li>
+                            <li>
+                            <h4>도레미 파솔라 시도레 미</h4>
+                            <ul>
+                                <li>파솔 라시도</li>
+                                <li>레미 파솔</li>
+                                <li>라시도 레미 파솔</li>
+                                <li>라시 도레미</li>
+                                <li>파솔라시 도레미파 솔라시도 레미파 솔</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="contents__texture">
+                        <div class="inner">
+                            <h4>라시 도레미파 솔라 시도</h4>
+                            <p>도레미파 솔라시도레 미파솔라 시도레 미파솔라시도.</p>
+                            <h4>레미파 솔라시 도레미 파</h4>
+                            <p>솔라시도 레미파 솔라 시도레 미파솔 라시도 레미파솔라.</p>
+                        </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <a href="javascript:void(0)" class="item__name__underline">BOARD</a>
+                </li>
+            </ul>
+        </div>
+    </header>

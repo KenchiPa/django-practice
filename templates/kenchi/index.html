@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kenchi.co.kr</title>
+
+    <link rel="icon" href="{% static 'images/circle_mirror_me.jpg' %}">
+
+    <!-- 오픈 그래프 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kenchi" />
+    <meta property="og:title" content="kenchi.co.kr" />
+    <meta property="og:description" content="켄치파파의 연습용 사이트" />
+    <meta property="og:image" content="{% static 'images/circle_mirror_me.jpg' %}" />
+    <meta property="og:url" content="http://kenchi.co.kr" />
+
+    <!-- 트위터 카드 -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="Kenchi" />
+    <meta property="twitter:title" content="kenchi.co.kr" />
+    <meta property="twitter:description" content="켄치파파의 연습용 사이트" />
+    <meta property="twitter:image" content="{% static 'images/circle_mirror_me.jpg' %}" />
+    <meta property="twitter:url" content="http://kenchi.co.kr" />
+
+    <!-- css 초기화 -->
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts(Nanum Gothic Regular 400 bold 700) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google material icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <!-- gsap & ScrollToPlugin cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js" integrity="sha512-tQFq+nb/TSS648SDzWbSj0A67t4I1PFzR0U6Oi/yEYFyUbAIwg74SOCbr7t2X1Rn+iln7sYwfh8y+z7p0gddOw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!--    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">-->
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <!-- YOUTUBE -->
+    <script defer src="{% static 'js/youtube.js' %}"></script>
+
+<!--    <script defer src="{% static 'bootstrap.min.js' %}"></script>-->
+
+    <script defer src="{% static 'js/main.js' %}"></script>
+
+
+</head>
+<body>
+
+<!-- header -->
+{% include "kenchi/header.html" %}
+
+    <!-- VISUAL -->
+    <section class="visual">
+        <div class="inner">
+            <div class="title fade-in">
+                <img src="{% static 'images/K.png' %}" alt="K" class="k" />
+            </div>
+            <div class="fade-in">
+                <img src="{% static 'images/E.png' %}" alt="E" class="e" />
+            </div>
+            <div class="fade-in">
+                <img src="{% static 'images/N.png' %}" alt="N" class="n" />
+            </div>
+            <div class="fade-in">
+                <img src="{% static 'images/C.png' %}" alt="C" class="c" />
+            </div>
+            <div class="fade-in">
+                <img src="{% static 'images/H.png' %}" alt="H" class="h" />
+            </div>
+            <div class="fade-in">
+                <img src="{% static 'images/I.png' %}" alt="I" class="i">
+            </div>
+            <div class="fade-in">
+                <img src="{% static 'images/cat_foot.png' %}" alt="cat foot" class="cat-foot floating ">
+            </div>
+            <div class="fade-in">
+                <img src="{% static 'images/cat_foot2.png' %}" alt="cat foot2" class="cat-foot2 floating2">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- YOUTUBE VIDEO -->
+    <section class="youtube">
+        <div class="youtube__area">
+            <div id="player"></div>
+        </div>
+        <div class="youtube__cover"></div>
+    </section>
+
+<!-- footer -->
+{% include "kenchi/footer.html" %}
+
+</body>
+</html>

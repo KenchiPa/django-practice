@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['54.180.45.150']
 # Application definition
 
 INSTALLED_APPS = [
+    'kenchi.apps.KenchiConfig',
     'common.apps.CommonConfig',
     'pybo.apps.PyboConfig',
     'django.contrib.admin',
