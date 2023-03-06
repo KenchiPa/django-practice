@@ -25,7 +25,7 @@
                 {% if question_list %}
                 {% for question in question_list %}
                 <div>
-                    <div class="num">{{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}
+                    <div class="num">{{question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}
                     </div>
                     <div class="title">
                         <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a>
@@ -88,7 +88,7 @@
                     </li>
                     {% else %}
                     <li class="page-item-right disabled">
-                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음2</a>
+                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음3</a>
                     </li>
                     {% endif %}
                 </div>
@@ -142,8 +142,8 @@
             <!--    </ul>-->
             <!--    &lt;!&ndash; 페이징처리 끝 &ndash;&gt;-->
 
-
         </div>
+    </div>
 </section>
 
 {% endblock %}
@@ -163,6 +163,7 @@ btn_search.addEventListener('click', function() {
     document.getElementById('page').value = 1;  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
     document.getElementById('searchForm').submit();
 });
+
 
 </script>
 {% endblock %}

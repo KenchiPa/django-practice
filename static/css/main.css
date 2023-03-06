@@ -743,7 +743,7 @@ footer .logo {
     width: 90px;
     margin: auto;
 }
-.inner-page .pagination .page-item-right.disabled{
+.inner-page .pagination .page-item-right.disabled {
     display: none;
 }
 .inner-page .pagination .page-item-right {
