@@ -657,24 +657,30 @@ footer .logo {
 }
 .questions .inner .board-wrap .board-list .top {
     width: 100%;
-    height: 30px;
+    padding-bottom: 6px;
+    height: 40px;
     border-top: 2px solid #595959;
 }
 .questions .inner .board-wrap .board-list > div > div {
     text-align: center;
+    padding: 13px;
 }
 .questions .inner .board-wrap .board-list .top .num {
     width: 10%;
+    font-weight: bold;
 }
 .questions .inner .board-wrap .board-list .top .title {
     width: 50%;
+    font-weight: bold;
     text-align: center;
 }
 .questions .inner .board-wrap .board-list .top .writer {
     width: 15%;
+    font-weight: bold;
 }
 .questions .inner .board-wrap .board-list .top .date {
     width: 25%;
+    font-weight: bold;
 }
 .questions .inner .board-wrap .board-list .num {
     width: 10%;
