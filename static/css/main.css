@@ -689,6 +689,9 @@ footer .logo {
     width: 50%;
     text-align: left;
 }
+.questions .inner .board-wrap .board-list .title a:hover {
+    font-weight: bold;
+}
 .questions .inner .board-wrap .board-list .writer {
     width: 15%;
 }
