@@ -715,6 +715,7 @@ footer .logo {
 }
 .inner-page .pagination .page-item-left.disabled {
     display: none;
+}
 .inner-page .pagination .page-item-left {
     width: 100px;
     height: 50px;
