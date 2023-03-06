@@ -27,7 +27,9 @@ def index(request):
             Q(answer__author__username__icontains=kw)  # 답변 글쓴이 검색
         ).distinct()
     paginator = Paginator(question_list, 10)  # 페이지당 10개씩 보여주기
+    logger.info(paginator)
     page_obj = paginator.get_page(page)  # 해당 페이지의 데이터만 조회하도록 쿼리가 변경된다.
+    logger.info(page_obj)
     context = {'question_list': page_obj, 'page': page, 'kw': kw}
     return render(request, 'pybo/question_list.html', context)
 
