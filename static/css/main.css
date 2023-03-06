@@ -713,7 +713,9 @@ footer .logo {
     margin: auto;
     display: flex;
 }
-.inner-page .pagination .page-item-left {   
+.inner-page .pagination .page-item-left.disabled {
+    display: none;
+.inner-page .pagination .page-item-left {
     width: 100px;
     height: 50px;
     margin-right: 30px;
@@ -740,6 +742,9 @@ footer .logo {
     right: 0;
     width: 90px;
     margin: auto;
+}
+.inner-page .pagination .page-item-right.disabled{
+    display: none;
 }
 .inner-page .pagination .page-item-right {
     width: 100px;
