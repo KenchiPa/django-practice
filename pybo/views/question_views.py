@@ -11,6 +11,7 @@ from ..models import Question
 def question_create(request):
         # POST 요청
         if request.method == 'POST':
+                print("question_create POST 요청으로 들어왔다.")
                 form = QuestionForm(request.POST)  # request.POST에 담긴 subject, content 값이 QuestionForm의 subject, content 속성에 자동으로 저장되어 객체가 생성
                 # 폼이 유효하다면: form에 저장된 subject, content의 값이 올바르지 않다면 form에는 오류 메시지가 저장
                 if form.is_valid():

@@ -1,37 +1,81 @@
-{% extends 'base.html' %}
+{% extends 'kenchi/base.html' %}
 {% block content %}
-<div class="container">
-  <h5 class="my-3 border-bottom pb-2">질문등록</h5>
-<!-- action 속성을 지정하지 않았다. form 태그에 action 속성을 지정하지 않으면 현재 페이지의 URL 이 디폴드 action으로 설정된다. -->
 
-  <form method="post">
-    {% csrf_token %}
-    <!-- 오류표시 Start -->
-        {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-            {% for field in form %}
-            {% if field.errors %}
-            <div>
-                <strong>{{ field.label }}</strong>
-                {{ field.errors }}
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-        {% endif %}
-        <!-- 오류표시 End -->
-        <div class="mb-3">
-            <label for="subject" class="form-label">제목</label>
-            <input type="text" class="form-control" name="subject" id="subject"
-                   value="{{ form.subject.value|default_if_none:'' }}">
-        </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">내용</label>
-            <textarea class="form-control" name="content"
-                      id="content" rows="10">{{ form.content.value|default_if_none:'' }}</textarea>
-        </div>
+<div class="register-wrap">
 
-    <button type="submit" class="btn btn-primary">저장하기</button>
-  </form>
+    <div class="inner-register">
+        <!-- 오류표시 Start -->
+          {% if form.errors %}
+          <div class="alert alert-danger" role="alert">
+              {% for field in form %}
+              {% if field.errors %}
+              <div>
+                  <strong>{{ field.label }}</strong>
+                  {{ field.errors }}
+              </div>
+              {% endif %}
+              {% endfor %}
+          </div>
+          {% endif %}
+          <!-- 오류표시 End -->
+        <h2 class="label">질문등록</h2>
+        <form method="post">
+            {% csrf_token %}
+        <div class="r-title">제목</div>
+        <input class="r-title-input"  name="subject" id="subject" type="text" value="{{ form.subject.value|default_if_none:'' }}" placeholder="제목을 입력하세요.">
+        <div class="r-title2" >내용</div>
+        <textarea class="r-content-input" name="content" id="content" cols="30" rows="10" placeholder="내용을 입력하세요.">{{ form.content.value|default_if_none:'' }}</textarea>
+        <input class="r-save" type="submit" value="저장하기">
+        </form>
+    </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">-->
+<!--  <h5 class="my-3 border-bottom pb-2">질문등록</h5>-->
+<!--&lt;!&ndash; action 속성을 지정하지 않았다. form 태그에 action 속성을 지정하지 않으면 현재 페이지의 URL 이 디폴드 action으로 설정된다. &ndash;&gt;-->
+
+<!--  <form method="post">-->
+<!--    {% csrf_token %}-->
+<!--    &lt;!&ndash; 오류표시 Start &ndash;&gt;-->
+<!--        {% if form.errors %}-->
+<!--        <div class="alert alert-danger" role="alert">-->
+<!--            {% for field in form %}-->
+<!--            {% if field.errors %}-->
+<!--            <div>-->
+<!--                <strong>{{ field.label }}</strong>-->
+<!--                {{ field.errors }}-->
+<!--            </div>-->
+<!--            {% endif %}-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--        {% endif %}-->
+<!--        &lt;!&ndash; 오류표시 End &ndash;&gt;-->
+<!--        <div class="mb-3">-->
+<!--            <label for="subject" class="form-label">제목</label>-->
+<!--            <input type="text" class="form-control" name="subject" id="subject"-->
+<!--                   value="{{ form.subject.value|default_if_none:'' }}">-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--            <label for="content" class="form-label">내용</label>-->
+<!--            <textarea class="form-control" name="content"-->
+<!--                      id="content" rows="10">{{ form.content.value|default_if_none:'' }}</textarea>-->
+<!--        </div>-->
+
+<!--    <button type="submit" class="btn btn-primary">저장하기</button>-->
+<!--  </form>-->
+<!--</div>-->
 {% endblock %}
