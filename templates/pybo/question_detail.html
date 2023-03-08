@@ -4,49 +4,87 @@
 
 {% block content %}
 
-<div class="detail-wrap">
+    <div class="detail-wrap">
         <div class="inner">
             {% if messages %}
-            <div class="alert alert-danger my-3" role="alert">
+        <div class="alert alert-danger my-3" role="alert">
             {% for message in messages %}
             <strong>{{ message.tags }}</strong>
             <ul><li>{{ message.message }}</li></ul>
             {% endfor %}
+        </div>
+        {% endif %}
+            <div class="title-area">
+                <h1 class="detail-title">{{ question.subject }}</h1>
             </div>
-            {% endif %}
-            <h1 class="detail-title">{{ question.subject }}</h1>
-            <div class="detail-title-area">{{ question.content|mark }}</div>
-            {% if question.modify_date %}
-            <div class="created">
-                <div class="writer">modified at</div>
-                <div class="created-at">{{ question.modify_date }}</div>
-            </div>
-            {% endif %}
-            <div class="modified">
-                <div class="writer">{{ question.author.username }}</div>
-                <div class="created-at">{{ question.create_date }}</div>
-            </div>
-            <div class="rmd">
-                <a href="javascript:void(0)" data-uri="{% url 'pybo:question_vote' question.id  %}" class="question-recommend"> 추천
-                    <span class="badge">{{question.voter.count}}</span>
-                </a>
+            <div class="area-wrap">
+                <div class="detail-title-area">{{ question.content|mark }}</div>
+                {% if question.modify_date %}
+                <div class="created">
+                    <div class="writer">modified at</div>
+                    <div class="created-at">{{ question.modify_date }}</div>
+                </div>
+                {% endif %}
+                <div class="modified">
+                    <div class="writer">{{ question.author.username }}</div>
+                    <div class="created-at">{{ question.create_date }}</div>
+                </div>
+                <div class="recommend">
+                    <a href="javascript:void(0)" data-uri="{% url 'pybo:question_vote' question.id  %}" class="question-recommend"> 추천
+                        <span class="badge">{{question.voter.count}}</span>
+                    </a>
+                </div>
                 {% if request.user == question.author %}
-                <a href="{% url 'pybo:question_modify' question.id %}" class="question-modify">수정</a>
-                <a href="javascript:void(0)" class="question-delete" data-uri="{% url 'pybo:question_delete' question.id  %}">삭제</a>
+                <div class="modify">
+                    <a href="{% url 'pybo:question_modify' question.id %}" class="question-modify">수정</a>
+                </div>
+                <div class="delete">
+                    <a href="javascript:void(0)" class="question-delete" data-uri="{% url 'pybo:question_delete' question.id  %}">삭제</a>
+                </div>
                 {% endif %}
             </div>
-            <h2 class="answer-count">{{question.answer_set.count}}개의 답변이 있습니다.</h2>
+
+
+            <div class="title-area">
+                <h1 class="detail-title2">{{question.answer_set.count}}개의 답변이 있습니다.</h1>
+            </div>
+
             {% for answer in question.answer_set.all %}
-            <div class="answer-count-area">{{ answer.content }}</div>
-            <div class="answer-created">
-                <div class="answer-writer">{{ question.author.username }}</div>
-                <div class="answer-created-at">{{ question.create_date }}</div>
+            <div class="area-wrap">
+                <div class="detail-title-area">{{ answer.content }}</div>
+                {% if question.modify_date %}
+                <div class="created">
+                    <div class="writer">modified at</div>
+                    <div class="created-at">{{ question.modify_date }}</div>
+                </div>
+                {% endif %}
+                <div class="modified">
+                    <div class="writer">{{ answer.author.username }}</div>
+                    <div class="created-at">{{ answer.create_date }}</div>
+                </div>
+                <div class="recommend">
+                    <a href="javascript:void(0)" data-uri="{% url 'pybo:question_vote' answer.id  %}" class="question-recommend"> 추천
+                        <span class="badge">{{answer.voter.count}}</span>
+                    </a>
+                </div>
+                {% if request.user == answer.author %}
+                <div class="modify">
+                    <a href="{% url 'pybo:question_modify' question.id %}" class="question-modify">수정</a>
+                </div>
+                <div class="delete">
+                    <a href="javascript:void(0)" class="question-delete" data-uri="{% url 'pybo:question_delete' question.id  %}">삭제</a>
+                </div>
+                {% endif %}
             </div>
             {% endfor %}
-            <h2 class="answer-title">답변내용</h2>
+
+            <div class="title-area">
+                <h1 class="detail-title2">답변내용</h1>
+            </div>
             <form action="{% url 'pybo:answer_create' question.id %}" method="post">
                 {% csrf_token %}
-                {% if form.errors %}
+                 <!-- 오류표시 Start -->
+            {% if form.errors %}
             <div class="alert alert-danger" role="alert">
                 {% for field in form %}
                 {% if field.errors %}
@@ -58,10 +96,14 @@
                 {% endfor %}
             </div>
             {% endif %}
-                <textarea {% if not user.is_authenticated %}disabled{% endif %}
-                          class="answer-title-area" name="content" id="content" cols="30" rows="10"></textarea>
-                <input class="answer-submit" type="submit" value="답변등록" />
+            <!-- 오류표시 End -->
+                <textarea {% if not user.is_authenticated %}disabled{% endif %} name="" id="" cols="30" rows="10" class="area-wrap2"></textarea>
             </form>
+
+
+            <input class="answer-submit" type="submit" value="답변등록">
+
+
         </div>
     </div>
     {% endblock %}
@@ -84,6 +126,9 @@
         });
     });
     </script>
-    {% endblock %}
+
+
+{% endblock %}
+
 
 
